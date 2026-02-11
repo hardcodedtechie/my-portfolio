@@ -42,7 +42,7 @@ export default function App() {
         }
       },
     });
-
+    console.log("typed initialized");
     return () => typed.destroy();
   }, []);
 
