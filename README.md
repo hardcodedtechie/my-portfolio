@@ -2,21 +2,31 @@
 
 # My Portfolio
 
-Personal portfolio website built with **React + Vite**, featuring a 3D hero scene using **Three.js / React Three Fiber**.
+A modern 3D personal portfolio built with React + Vite and Three.js.
 
 ## Live Demo
 
 https://my-portfolio-eight-mocha-47.vercel.app/
 
+## Features
+
+- 3D hero scene (React Three Fiber + Three.js)
+- Postprocessing glitch + chromatic effects
+- Animated terminal overlay
+- Typed intro sequence
+- CI pipeline with GitHub Actions
+
 ## Tech Stack
 
 - React 19
 - Vite
-- Three.js + @react-three/fiber + drei
-- Postprocessing effects
-- ESLint
+- Three.js / @react-three/fiber / drei
+- ESLint + Prettier
+- Husky + lint-staged (pre-commit hooks)
+- GitHub Actions CI
+- Vercel deployment
 
-## Running Locally
+## Run Locally
 
 ```bash
 npm install
