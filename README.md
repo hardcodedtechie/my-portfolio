@@ -5,9 +5,11 @@
 Personal portfolio website built with **React + Vite**, featuring a 3D hero scene using **Three.js / React Three Fiber**.
 
 ## Live Demo
+
 https://my-portfolio-eight-mocha-47.vercel.app/
 
 ## Tech Stack
+
 - React 19
 - Vite
 - Three.js + @react-three/fiber + drei
@@ -15,6 +17,8 @@ https://my-portfolio-eight-mocha-47.vercel.app/
 - ESLint
 
 ## Running Locally
+
 ```bash
 npm install
 npm run dev
+```
