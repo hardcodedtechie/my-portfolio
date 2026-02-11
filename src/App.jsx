@@ -1,3 +1,4 @@
+// test lint-staged
 import React, { useEffect, useRef, useState, Suspense, lazy } from "react";
 import Typed from "typed.js";
 
