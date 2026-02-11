@@ -3,6 +3,9 @@ import Typed from "typed.js";
 
 import "./App.css";
 import { TerminalOverlay } from "./components/ui/TerminalOverlay.jsx";
+import { ErrorBoundary } from "./components/ui/ErrorBoundary.jsx";
+
+const HeroScene = lazy(() => import("./components/scene/HeroScene.jsx"));
 
 export default function App() {
   const [isHuman, setIsHuman] = useState(false);
@@ -10,12 +13,6 @@ export default function App() {
   const [logs, setLogs] = useState(["[SYS] Initializing core..."]);
 
   const typedEl = useRef(null);
-
-  const HeroScene = lazy(() =>
-    import("./components/scene/HeroScene.jsx").then((m) => ({
-      default: m.HeroScene,
-    })),
-  );
 
   useEffect(() => {
     const typed = new Typed(typedEl.current, {
@@ -33,7 +30,6 @@ export default function App() {
         if (pos < 4) {
           setGlitch(true);
           setTimeout(() => setGlitch(false), 300);
-
           setLogs((prev) => [
             ...prev.slice(-4),
             `[ERR] mismatch_at_index_${pos}`,
@@ -52,12 +48,13 @@ export default function App() {
 
   return (
     <div className={`page ${isHuman ? "is-human" : ""}`}>
-      <Suspense fallback={null}>
-        <HeroScene isHuman={isHuman} glitch={glitch} />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={null}>
+          <HeroScene isHuman={isHuman} glitch={glitch} />
+        </Suspense>
+      </ErrorBoundary>
 
       <TerminalOverlay logs={logs} />
-
       <div className="grid" />
 
       <div className="container">
