@@ -18,13 +18,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-        - name: Prettier check
-  run: npm run format:check
+      - name: Prettier check
+        run: npm run format:check
 
       - name: Run lint
         run: npm run lint
